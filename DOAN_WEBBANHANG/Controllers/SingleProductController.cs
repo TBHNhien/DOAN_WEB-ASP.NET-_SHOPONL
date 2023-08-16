@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DOAN_WEBBANHANG.Models.BUS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,9 +16,10 @@ namespace DOAN_WEBBANHANG.Controllers
         }
 
         // GET: SingleProduct/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(String id)
         {
-            return View();
+            var db = ShopOnlineBUS.ChiTiet(id);
+            return View(db);
         }
 
         // GET: SingleProduct/Create
